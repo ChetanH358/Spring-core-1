@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- value using p-schema -->
+	<bean name="country" class="setter.collection.map_type_dependency.Country" p:countryname="India">
+	
+	<!-- primitive data type are written directly using bean tag where as to set 
+	the values for List,Set,Map we have to use property tag -->
+	
+		<property name="stateandlanguage">
+
+			<!-- 1-st type of adding dependencies into map -->
+			<map>
+			<!-- entry tag is used to inject key and value pair -->
+				<entry>
+					<key>
+						<value>karnataka</value>
+					</key>
+					<value>kannada</value>
+				</entry>
+
+				<!-- 2-nd type adding dependencies into map -->
+				<entry key="TamilNadu">
+					<value>tamil</value>
+				</entry>
+
+				<!-- 3-rd type adding dependencies into map -->
+				<entry key="AndraPradesh" value="Telgu"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

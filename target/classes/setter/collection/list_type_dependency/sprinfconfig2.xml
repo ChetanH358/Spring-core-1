@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- value using p-schema(p-property) -->
+	<bean name="company" class="setter.collection.list_type_dependency.Company" p:companyid="111" p:companyname="test-yantra">
+		<!-- to set the values for setter we use property tag -->
+		<property name="employees">
+			<list>
+				<value>employee1</value>
+				<value>employee2</value>
+				<value>employee3</value>
+				<value>employee4</value>
+				<value>employee5</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
